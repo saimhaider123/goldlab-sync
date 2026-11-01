@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: goldlab-sync
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: ADMIN_TOKEN
+        sync: false
